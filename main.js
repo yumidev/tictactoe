@@ -183,59 +183,13 @@ var getWinnerOne = function () {
       aiMove();
     }
   } else {
-    // if ( user === "X") {
       swal({
         title: "Sweet!",
-        text: "Player1 didn't lose your ice-cream.",
+        text: "Player1 save ice-cream from the fox.",
         imageUrl: "images/cutecat.jpg"
       });
-    // }
   }
-  // onePlayerSelect();
 }
-
-
-//
-//
-// var getWinnerOne = function () {
-//   // debugger;
-//   if ( !(column() || row() || leftDiagonal() || rightDiagonal()) ) {
-//     if ( moveCount === grid.length*grid.length ){
-//       drawResult();
-//     } else {
-//       aiMove();
-//     }
-//   } else {
-//     if ( user === "X") {
-//       swal({
-//         title: "Sweet!",
-//         text: "Player1 didn't lose your ice-cream.",
-//         imageUrl: "images/cutecat.jpg"
-//       });
-//     } else ( user === "O" ) {
-//       swal({
-//         title: "Sweet!",
-//         text: "Player1 didn't lose your ice-cream.",
-//         imageUrl: "images/cutecat.jpg"
-//       });
-//     }
-//   }
-//   // onePlayerSelect();
-// }
-//
-// var getWinnerAI = function () {
-//   // debugger;
-//   if ( column() || row() || leftDiagonal() || rightDiagonal() ) {
-//       swal({
-//         title: "Sweet!",
-//         text: "Player1 didn't lose your ice-cream.",
-//         imageUrl: "images/cutecat.jpg"
-//       });
-//   }
-//   // onePlayerSelect();
-// }
-
-
 
 
 var columnIsFull = function (grid) {
@@ -307,7 +261,7 @@ var drawResult = function () {
 
 var getWinner = function () {
 
-  if ( columnIsFull(grid) || rowisFull(grid) || leftDiagonalisFull(grid) || rightDiagonalisFull(grid) ) {
+  if ( columnIsFull(grid) || rowIsFull(grid) || leftDiagonalIsFull(grid) || rightDiagonalIsFull(grid) ) {
     if ( turn === 0 ) {
       console.log("Winner is XXXXX");
       winner = "X"
