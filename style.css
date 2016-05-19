@@ -179,7 +179,7 @@ z-index: 50;
   margin-bottom: 0px;
 }
 
-.intro p {
+.box p {
   color: #0e83cd;
   font-size: 70px;
   font-family: "Arvo", serif;
@@ -188,7 +188,17 @@ z-index: 50;
   padding: 20px;
 }
 
-.intro p:hover {
+.box p:hover {
+  color: white;
+  text-shadow: 2px 3px 18px #0e83cd;
+}
+
+.after p {
+  font-size: 50px;
+  font-family: "Arvo", serif;
+  font-weight: 700;
+  margin: 10px;
+  padding: 20px;
   color: white;
   text-shadow: 2px 3px 18px #0e83cd;
 }
@@ -216,6 +226,21 @@ z-index: 50;
   background-color: white;
 
 }
+.intro img {
+border-radius: 50px;
+border: 20px solid #0e83cd;
+}
+
+.intro button {
+  width: 300px;
+  color: white;
+  font-size: 30px;
+  background-color: #29a7ea;
+  font-family: "Orbitron", sans-serif;
+  text-align: center;
+  border-radius: 20px;
+  padding: 10px;
+}
 
 
 .box {
@@ -224,4 +249,12 @@ z-index: 50;
   width: 60%;
   margin-top: 10vw;
   border-radius: 20px;
-  }
+}
+
+.after {
+  display: none;
+}
+
+.after h2 {
+  margin-bottom: 50px
+}

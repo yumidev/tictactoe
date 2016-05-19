@@ -10,7 +10,6 @@ var url = [];
 var icePicOne=null;
 var icePicTwo=null;
 var image1;
-var enableBoard; // To avoide overriding
 var moveCount = 0;
 var oneWinCount = 0;
 var twoWinCount = 0;
@@ -31,9 +30,14 @@ $(".reset").on("click", function () {
 window.location.reload();
 })
 
-
 $(".onePlayer").on("click", function () {
+  $(".box").css( "display", "none")
+  $(".after").css( "display", "block")
+})
+
+$(".intro button").on("click", function() {
   $(".intro").css("display", "none");
+  $(".selectIce").css("display", "block");
   onePlayerSelect();
   onePlayerPlay();
   $(".player2").css( "background-image", "url(images/fennecfox.jpg)");
@@ -47,10 +51,13 @@ $(".twoPlayers").on("click", function () {
   twoPlayersPlay();
 })
 
+
+
 //when the player select a icecream, that icecream should appear on the board, and when the winner is decided, that icecream will appear on the scoreboard
 
 var twoPlayersSelect = function () {
   $(".Ice").on("click", function() {
+    // if ($(this).css("background-image") != "") {
     $currentIcePic=$(this).attr("src");
     url.push('url("'+ $currentIcePic + '")')
     if (!image1) {
@@ -78,6 +85,7 @@ var twoPlayersSelect = function () {
       icePicTwo = $currentIcePic;
       image1 = undefined;
     }
+  // }
   })
 }
 
@@ -121,8 +129,8 @@ var onePlayerSelect = function () {
     $(".player1").css( "background-image", url[0]);
     $(".player1").css( "background-size", "cover");
     swal({
-      title: "The fox wants",
-      text: "THIS Icecream",
+      title: "Can you keep it?",
+      text: "Let's see",
       timer: 1000,
       showConfirmButton: false
     });
@@ -173,7 +181,6 @@ var onePlayerPlay = function () {
 }
 
 
-
 var getWinnerOne = function () {
   // debugger;
   if ( !(columnIsFull(grid) || rowIsFull(grid) || leftDiagonalIsFull(grid) || rightDiagonalIsFull(grid) )) {
@@ -184,8 +191,8 @@ var getWinnerOne = function () {
     }
   } else {
       swal({
-        title: "Sweet!",
-        text: "Player1 save ice-cream from the fox.",
+        title: "Relief!",
+        text: "Player kept the ice-cream from the fox.",
         imageUrl: "images/cutecat.jpg"
       });
   }
@@ -256,8 +263,6 @@ var drawResult = function () {
   });
 }
 
-//Make the alert part a var
-
 
 var getWinner = function () {
 
@@ -290,9 +295,6 @@ var getWinner = function () {
   }
   winFive();
 }
-
-
-
 
 
 var winFive = function () {
