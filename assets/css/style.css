@@ -193,7 +193,7 @@ z-index: 50;
   text-shadow: 2px 3px 18px #0e83cd;
 }
 
-.after p {
+.onePlayerAfter p {
   font-size: 50px;
   font-family: "Arvo", serif;
   font-weight: 700;
@@ -251,10 +251,10 @@ border: 20px solid #0e83cd;
   border-radius: 20px;
 }
 
-.after {
+.onePlayerAfter {
   display: none;
 }
 
-.after h2 {
+.onePlayerAfter h2 {
   margin-bottom: 50px
 }

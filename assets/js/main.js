@@ -29,7 +29,7 @@ window.location.reload();
 
 $(".onePlayer").on("click", function () {
   $(".box").css( "display", "none")
-  $(".after").css( "display", "block")
+  $(".onePlayerAfter").css( "display", "block")
 })
 
 $(".intro button").on("click", function() {
@@ -240,10 +240,6 @@ var rightDiagonalIsFull = function (grid) {
   return winNum === grid.length;
 }
 
-
-// you can do clearBoard when the user select another ice cream, so don't worry
-
-
 var drawResult = function () {
   swal({
     title: "Draw!",
@@ -284,7 +280,6 @@ var getWinner = function () {
   }
   winFive();
 }
-
 
 var winFive = function () {
   if ( oneWinCount === 3 || twoWinCount === 3 ) {
