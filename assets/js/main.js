@@ -14,9 +14,6 @@ var moveCount = 0;
 var oneWinCount = 0;
 var twoWinCount = 0;
 
-//Aha... Once clearBoard function working, that click event keeps working too.
-//When the button clicked, the selection board comes up.
-
 $(".choose").on("click", function () {
   moveCount = 0;
   turn = 1;
@@ -52,12 +49,8 @@ $(".twoPlayers").on("click", function () {
 })
 
 
-
-//when the player select a icecream, that icecream should appear on the board, and when the winner is decided, that icecream will appear on the scoreboard
-
 var twoPlayersSelect = function () {
   $(".Ice").on("click", function() {
-    // if ($(this).css("background-image") != "") {
     $currentIcePic=$(this).attr("src");
     url.push('url("'+ $currentIcePic + '")')
     if (!image1) {
@@ -85,7 +78,6 @@ var twoPlayersSelect = function () {
       icePicTwo = $currentIcePic;
       image1 = undefined;
     }
-  // }
   })
 }
 
@@ -123,7 +115,6 @@ var twoPlayersPlay = function () {
 
 var onePlayerSelect = function () {
   $(".Ice").on("click", function() {
-  // debugger;
     $currentIcePic=$(this).attr("src");
     url.push('url("'+ $currentIcePic + '")')
     $(".player1").css( "background-image", url[0]);
@@ -182,7 +173,6 @@ var onePlayerPlay = function () {
 
 
 var getWinnerOne = function () {
-  // debugger;
   if ( !(columnIsFull(grid) || rowIsFull(grid) || leftDiagonalIsFull(grid) || rightDiagonalIsFull(grid) )) {
     if ( moveCount === grid.length*grid.length ){
       drawResult();
@@ -200,7 +190,6 @@ var getWinnerOne = function () {
 
 
 var columnIsFull = function (grid) {
-  // debugger;
   var container = [];
   for(var i=0; i< grid.length; i+= 1) {
     var winNum=0;
