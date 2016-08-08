@@ -1,7 +1,7 @@
 .canvas {
   display: table-caption;
   position: absolute;
-  left: 4%;
+  left: 20%;
   float: left;
   background-color: #9adcff;
   box-sizing: border-box;
@@ -40,11 +40,11 @@ nav {
   height: 11vw;
   /*border: 5px solid #338fc1;*/
   border-radius: 50%;
-  float: none;
+  float: right;
   display: inline-block;
   clear: both;
   background-color: #9adcff;
-  margin: 5px 0px 0px 14.5%;
+  margin: 100px 14.5% 0px 14.5%;
   /*max-width: 150px;
   max-height: 150px;
   min-width: 80px;

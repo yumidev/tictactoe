@@ -44,6 +44,7 @@ $(".intro button").on("click", function() {
 
 $(".twoPlayers").on("click", function () {
   $(".intro").css("display", "none");
+  $(".selectIce").css("display", "block");
   twoPlayersSelect();
   twoPlayersPlay();
 })
@@ -263,6 +264,9 @@ var getWinner = function () {
       var $image = $("<img>")
       $image.attr("src", icePicOne).css("width", "7vw").css("height", "7vw").css("float", "left").css("border-radius", "20px").appendTo(".result1");
       oneWinCount +=1
+
+      winThree();
+
     } else if ( turn === 1 ) {
       console.log("Winner is OOOOO");
       winner = "O"
@@ -274,19 +278,29 @@ var getWinner = function () {
       var $image = $("<img>")
       $image.attr("src", icePicTwo).css("width", "7vw").css("height", "7vw").css("float", "left").css("border-radius", "20px").appendTo(".result2");
       twoWinCount +=1;
+
+      winThree();
+
     }
   } else if ( moveCount===grid.length*grid.length ) {
     drawResult();
   }
-  winFive();
 }
 
-var winFive = function () {
+var winThree = function () {
   if ( oneWinCount === 3 || twoWinCount === 3 ) {
     swal({
       title: "Success!",
       text: winner + " got this ice-cream shop.",
       imageUrl: "images/cutecat.jpg"
     });
+  }
+  else {
+    moveCount = 0;
+    turn = 1;
+    url = [];
+    $(".pixel").css("background","");
+    $(".selectIce").css("display", "block");
+    grid = [["","",""],["","",""],["","",""]];
   }
 }
